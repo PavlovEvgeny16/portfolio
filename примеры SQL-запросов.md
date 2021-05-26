@@ -1,15 +1,14 @@
-<html>
-<body>
-Примеры SQL-запросов к удаленной БД
+
+###Примеры SQL-запросов
 
 Задания взяты с сайта sql-academy.org
 
-Пример 1.
+####Пример 1.
 
-<b>Задание:</b> 
+######Задание:
 Сколько и кто из семьи потратил на развлечения (entertainment). Вывести статус в семье, имя, сумму
 
-Решение:
+######Решение:
 SELECT status, member_name, SUM(unit_price*amount) AS costs
 FROM  FamilyMembers
 INNER JOIN Payments JOIN Goods JOIN GoodTypes
@@ -40,5 +39,4 @@ GROUP BY classroom) AS cnt
 WHERE cnt = (SELECT MAX(cnt) FROM (
 SELECT classroom, COUNT(*) AS cnt FROM Schedule
 GROUP BY classroom) AS cnt)
-</body>
-</html>
+

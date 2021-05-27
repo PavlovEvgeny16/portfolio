@@ -7,7 +7,8 @@
 Сколько и кто из семьи потратил на развлечения (entertainment). Вывести статус в семье, имя, сумму
 
 <h4>Решение:</h4>
-SELECT status, member_name, SUM(unit_price*amount) AS costs  
+SELECT status, member_name, SUM(unit_price*amount) AS costs
+<br>
 FROM  FamilyMembers  
 INNER JOIN Payments JOIN Goods JOIN GoodTypes
 ON FamilyMembers.member_id = Payments.family_member AND Payments.good = Goods.good_id AND Goods.type = GoodTypes.good_type_id

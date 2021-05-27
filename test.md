@@ -24,15 +24,11 @@ GROUP BY member_name, status
 Найдите максимальный возраст (колич. лет) среди обучающихся 10 классов 
 
 <h4>Решение:</h4>
-SELECT MAX(
-<br>
-((YEAR(CURRENT_DATE) - YEAR(birthday)) - 
+SELECT MAX(((YEAR(CURRENT_DATE) - YEAR(birthday)) - 
 <br>
 (DATE_FORMAT(CURRENT_DATE, '%m%d') < DATE_FORMAT(birthday, '%m%d')))) as max_year
 <br>
-FROM Student INNER JOIN Student_in_class JOIN Class ON Student.id = Student_in_class.student
-<br>
-AND Student_in_class.class = Class.id
+FROM Student INNER JOIN Student_in_class JOIN Class ON Student.id = Student_in_class.student AND Student_in_class.class = Class.id
 <br>
 WHERE name LIKE '%10%'
 

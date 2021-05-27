@@ -38,17 +38,11 @@ WHERE name LIKE '%10%'
 Какой(ие) кабинет(ы) пользуются самым большим спросом?
 
 <h4>Решение:</h4>
-SELECT classroom 
+SELECT classroom FROM (
 <br>
-FROM (
+SELECT classroom, COUNT(*) AS cnt FROM Schedule GROUP BY classroom) AS cnt 
 <br>
-SELECT classroom, COUNT(*) AS cnt FROM Schedule
-<br>
-GROUP BY classroom) AS cnt
-<br>
-WHERE cnt = (SELECT MAX(cnt) 
-<br>
-FROM (
+WHERE cnt = (SELECT MAX(cnt) FROM (
 <br>
 SELECT classroom, COUNT(*) AS cnt FROM Schedule
 <br>

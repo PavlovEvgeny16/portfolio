@@ -44,6 +44,4 @@ SELECT classroom, COUNT(*) AS cnt FROM Schedule GROUP BY classroom) AS cnt
 <br>
 WHERE cnt = (SELECT MAX(cnt) FROM (
 <br>
-SELECT classroom, COUNT(*) AS cnt FROM Schedule
-<br>
-GROUP BY classroom) AS cnt)
+SELECT classroom, COUNT(*) AS cnt FROM Schedule GROUP BY classroom) AS cnt)

@@ -11,9 +11,7 @@ SELECT status, member_name, SUM(unit_price*amount) AS costs
 <br>
 FROM  FamilyMembers
 <br>
-INNER JOIN Payments JOIN Goods JOIN GoodTypes
-<br>
-ON FamilyMembers.member_id = Payments.family_member
+INNER JOIN Payments JOIN Goods JOIN GoodTypes ON FamilyMembers.member_id = Payments.family_member
 <br>
 AND Payments.good = Goods.good_id AND Goods.type = GoodTypes.good_type_id
 <br>

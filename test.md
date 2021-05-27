@@ -13,7 +13,9 @@ FROM  FamilyMembers
 <br>
 INNER JOIN Payments JOIN Goods JOIN GoodTypes
 <br>
-ON FamilyMembers.member_id = Payments.family_member AND Payments.good = Goods.good_id AND Goods.type = GoodTypes.good_type_id
+ON FamilyMembers.member_id = Payments.family_member
+<br>
+AND Payments.good = Goods.good_id AND Goods.type = GoodTypes.good_type_id
 <br>
 WHERE good_type_name = 'entertainment'
 <br>

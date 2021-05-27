@@ -8,15 +8,10 @@
 
 <h4>Решение:</h4>
 SELECT status, member_name, SUM(unit_price*amount) AS costs
-
 FROM  FamilyMembers
-
 INNER JOIN Payments JOIN Goods JOIN GoodTypes
-
 ON FamilyMembers.member_id = Payments.family_member AND Payments.good = Goods.good_id AND Goods.type = GoodTypes.good_type_id
-
 WHERE good_type_name = 'entertainment'
-
 GROUP BY member_name, status
 
 
